@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="propertyConstructor" class="thruConstructor.PropertyConstructor">
+        <constructor-arg ref="rentOfFlatConstructor"/>
+        <constructor-arg ref="selfOwnedFlatConstructor"/>
+
+    </bean>
+    <bean id="selfOwnedFlatConstructor" class="thruConstructor.SelfOwnedFlatConstructor">
+        <constructor-arg ref="selfOwnedOneBHK"/>
+        <constructor-arg ref="selfOwnedTwoBHK"/>
+        <constructor-arg ref="selfOwnedThreeBHK"/>
+    </bean>
+    <bean id="rentOfFlatConstructor" class="thruConstructor.RentOfFlatConstructor">
+        <constructor-arg ref="rentOfOneBHK"/>
+        <constructor-arg ref="rentOfTwoBHK"/>
+        <constructor-arg ref="rentOfThreeBHK"/>
+    </bean>
+    <bean id="rentOfOneBHK" class="thruConstructor.RentOfOneBHK"/>
+    <bean id="rentOfTwoBHK" class="thruConstructor.RentOfTwoBHK"/>
+    <bean id="rentOfThreeBHK" class="thruConstructor.RentOfThreeBHK"/>
+    <bean id="selfOwnedOneBHK" class="thruConstructor.SelfOwnedOneBHK"/>
+    <bean id="selfOwnedTwoBHK" class="thruConstructor.SelfOwnedTwoBHK"/>
+    <bean id="selfOwnedThreeBHK" class="thruConstructor.SelfOwnedThreeBHK"/>
+
+</beans>

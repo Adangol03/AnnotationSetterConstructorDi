@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <!--id must match with ref,The ref attribute specifies the name of the bean whose instance will be injected into this property.-->
+    <bean class="thruSetter.PropertySetter">
+        <property name="rentOfFlatSetter" ref="rentOfFlatSetter"/>
+        <property name="selfOwnedFlatSetter" ref="selfOwned"/>
+    </bean>
+    <bean id="rentOfFlatSetter" class="thruSetter.RentOfFlatSetter">
+        <property name="rentOfOneBHKFlats" ref="rentOfOneBHKFlats"/>
+        <property name="rentOfTwoBHKFlats" ref="rentOfTwoBHKFlats"/>
+        <property name="rentOfThreeBHKFlats" ref="rentOfThreeBHKFlats"/>
+    </bean>
+    <bean id="selfOwned" class="thruSetter.SelfOwnedFlatSetter">
+        <property name="selfOwnedOneBHKFlats" ref="selfOwnedOne"/>
+        <property name="selfOwnerTwoBHKFlats" ref="selfOwnedTwo"/>
+        <property name="selfOwnerThreeBHKFlats" ref="selfOwnedThree"/>
+    </bean>
+
+    <bean id="rentOfOneBHKFlats" class="thruSetter.RentOfOneBHKFlats"/>
+    <bean id="rentOfTwoBHKFlats" class="thruSetter.RentOfTwoBHKFlats"/>
+    <bean id="rentOfThreeBHKFlats" class="thruSetter.RentOfThreeBHKFlats"/>
+    <bean id="selfOwnedOne" class="thruSetter.SelfOwnedOneBHKFlats"/>
+    <bean id="selfOwnedTwo" class="thruSetter.SelfOwnerTwoBHKFlats"/>
+    <bean id="selfOwnedThree" class="thruSetter.SelfOwnerThreeBHKFlats"/>
+
+
+</beans>
